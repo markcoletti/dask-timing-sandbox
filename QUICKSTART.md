@@ -4,7 +4,7 @@
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/markcoletti/dask-timing-sandbox.git
+git clone https://github.com/markcoletti/dask-timing-sandbox.git  # Replace with your fork URL if applicable
 cd dask-timing-sandbox
 ```
 

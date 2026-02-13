@@ -131,11 +131,10 @@ run_multiple_studies() {
         fi
     done
     
-    # Compute statistics if Python is available with numpy
-    if python3 -c "import numpy" 2>/dev/null; then
-        echo ""
-        echo -e "${YELLOW}Computing statistics...${NC}"
-        python3 - "${output_files[@]}" << 'PYEOF'
+    # Compute statistics using Python's standard library
+    echo ""
+    echo -e "${YELLOW}Computing statistics...${NC}"
+    python3 - "${output_files[@]}" << 'PYEOF'
 import json
 import sys
 from statistics import mean, stdev
@@ -167,7 +166,6 @@ for key, values in metrics.items():
 
 print("="*60)
 PYEOF
-    fi
     
     echo ""
     echo -e "${GREEN}✓ All runs completed. Results in: ${output_dir}${NC}"
